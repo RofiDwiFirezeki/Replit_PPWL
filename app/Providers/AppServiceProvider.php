@@ -26,12 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Use HTTPS in production
-        if (env('APP_ENV') !== 'local') {
-            URL::forceScheme('https');
-        }
-        
-        // Use Bootstrap for pagination
-        Paginator::useBootstrap();
+        //
     }
 }
