@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -14,18 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::latest()->paginate(5);
+        $employees = Employee::latest()->paginate(10);
         return view('employees.index', compact('employees'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('employees.create');
     }
 
     /**
@@ -103,5 +94,15 @@ class EmployeeController extends Controller
 
         return redirect()->route('employees.index')
             ->with('success', 'Data pegawai berhasil dihapus.');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('employees.create');
     }
 }
